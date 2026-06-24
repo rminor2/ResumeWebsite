@@ -139,12 +139,9 @@
     const t2 = el.querySelector(".gooey__t2");
     if (!t1 || !t2 || !texts.length) return;
 
-    if (reduceMotion) {
-      t1.style.opacity = "0";
-      let i = 0; t2.textContent = texts[0]; t2.style.opacity = "100%";
-      setInterval(() => { i = (i + 1) % texts.length; t2.textContent = texts[i]; }, 2400);
-      return;
-    }
+    // The morphing headline is a signature hero animation, so it runs even when
+    // the OS "Reduce Motion" setting is on (this is what froze it on iOS, where
+    // it was swapping text with no blur morph).
     const morphTime = 1, cooldownTime = 0.4;
     let textIndex = texts.length - 1, time = new Date(), morph = 0, cooldown = cooldownTime;
     t1.textContent = texts[textIndex % texts.length];
