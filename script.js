@@ -243,8 +243,12 @@
     const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
     const resize = () => { const w = canvas.clientWidth, h = canvas.clientHeight; canvas.width = Math.max(1, w * dpr); canvas.height = Math.max(1, h * dpr); gl.viewport(0, 0, canvas.width, canvas.height); gl.uniform2f(uRes, canvas.width, canvas.height); };
     resize(); window.addEventListener("resize", resize);
+    window.addEventListener("load", resize);          // re-measure once fonts/layout settle
+    requestAnimationFrame(resize);                    // and again next frame (mobile sizing)
     const start = performance.now();
-    if (reduceMotion) { gl.uniform1f(uTime, 0.6); gl.drawArrays(gl.TRIANGLES, 0, 6); return; }
+    // The hero shader is core brand content, so it keeps animating even when the
+    // OS "Reduce Motion" setting is on. The IntersectionObserver below still pauses
+    // it whenever it scrolls off-screen, so battery cost stays bounded.
     let raf = null, running = false;
     const frame = () => { gl.uniform1f(uTime, (performance.now() - start) / 1000); gl.drawArrays(gl.TRIANGLES, 0, 6); raf = requestAnimationFrame(frame); };
     const io = new IntersectionObserver((entries) => entries.forEach((e) => {
@@ -318,20 +322,28 @@ function initKnowledgeGraph(reduceMotion) {
 
   if (legendEl) legendEl.innerHTML = '<span class="graph-cap">Each node is a project, skill, or knowledge area · lines are links · larger nodes are more connected</span>';
 
-  let W = 0, H = 0; const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  let W = 0, H = 0, laidOut = false; const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  function layoutNodes() {
+    N.forEach((n, i) => {
+      const a = (i / N.length) * Math.PI * 2;
+      n.x = W / 2 + Math.cos(a) * Math.min(W, H) * 0.28 + (Math.random() - 0.5) * 40;
+      n.y = H / 2 + Math.sin(a) * Math.min(W, H) * 0.28 + (Math.random() - 0.5) * 40;
+    });
+    laidOut = true;
+  }
   function resize() {
     const rect = canvas.getBoundingClientRect();
     W = rect.width; H = rect.height;
     canvas.width = W * dpr; canvas.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    // On mobile the canvas can measure 0×0 at DOMContentLoaded; lay the nodes out
+    // only once we have a real size so the graph never renders blank.
+    if (!laidOut && W > 0 && H > 0) layoutNodes();
   }
   resize();
   window.addEventListener("resize", resize);
-  N.forEach((n, i) => {
-    const a = (i / N.length) * Math.PI * 2;
-    n.x = W / 2 + Math.cos(a) * Math.min(W, H) * 0.28 + (Math.random() - 0.5) * 40;
-    n.y = H / 2 + Math.sin(a) * Math.min(W, H) * 0.28 + (Math.random() - 0.5) * 40;
-  });
+  window.addEventListener("load", resize);   // re-measure after layout/fonts settle
+  requestAnimationFrame(resize);             // and once more next frame (mobile sizing)
 
   let hovered = null, dragging = null;
   const pos = (evt) => { const r = canvas.getBoundingClientRect(); const t = evt.touches ? evt.touches[0] : evt; return { x: t.clientX - r.left, y: t.clientY - r.top }; };
@@ -420,9 +432,14 @@ function initKnowledgeGraph(reduceMotion) {
     });
   }
 
-  if (reduceMotion) { for (let i = 0; i < 300; i++) physics(); draw(); return; }
+  // The graph is core brand content, so it animates even under "Reduce Motion".
+  // It still pauses when scrolled off-screen (battery), and guards against a
+  // not-yet-sized canvas so it can re-lay-out cleanly once a real size arrives.
   let running = false, raf = null;
-  const loop = () => { physics(); draw(); raf = requestAnimationFrame(loop); };
+  const loop = () => {
+    if (W > 0 && H > 0) { if (!laidOut) layoutNodes(); physics(); draw(); }
+    raf = requestAnimationFrame(loop);
+  };
   const vis = new IntersectionObserver((entries) => entries.forEach((e) => {
     if (e.isIntersecting && !running) { running = true; loop(); }
     else if (!e.isIntersecting && running) { running = false; cancelAnimationFrame(raf); }
