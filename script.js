@@ -75,7 +75,7 @@
       <div class="container footer__inner">
         <span class="footer__name">Ryan Minor</span>
         <span class="footer__links">
-          <a href="https://linkedin.com/in/ryan-minor" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/ryan-minor-825126228" target="_blank" rel="noreferrer">LinkedIn</a>
           <a href="https://github.com/rminor2" target="_blank" rel="noreferrer">GitHub</a>
           <a href="mailto:rminor2@uccs.edu">Email</a>
         </span>
