@@ -320,7 +320,7 @@ body.is-exiting main { animation: pageOut .24s ease both; }
 
   /* tubelight nav → floating bottom bar, raised up so it sits ABOVE iOS Safari's
      bottom toolbar (which otherwise covers the tabs and makes them untappable). */
-  .tube-nav { top: auto; bottom: calc(env(safe-area-inset-bottom, 0px) + 24px); }
+  .tube-nav { top: auto; bottom: calc(env(safe-area-inset-bottom, 0px) + 10px); }
   .tube-nav__pill { overflow-x: auto; max-width: calc(100vw - 24px); -ms-overflow-style: none; scrollbar-width: none; }
   .tube-nav__pill::-webkit-scrollbar { display: none; }
   .tube-link { padding: 10px 12px; }

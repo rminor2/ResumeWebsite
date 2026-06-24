@@ -68,6 +68,36 @@
     window.addEventListener("resize", () => placeLamp(false));
   }
 
+  /* ---------- Mobile nav follows the visible viewport bottom ----------
+     On phones the tube-nav floats at the bottom. iOS Safari's toolbar overlaps
+     the bottom of the layout viewport, so a plain `bottom: 0` element hides
+     behind it. We instead anchor the nav to the bottom of the *visual* viewport:
+     when Safari's toolbar slides up the nav rides up with it, and when the user
+     scrolls and the toolbar collapses the nav drops back to the screen edge. */
+  function followViewport() {
+    const nav = document.querySelector(".tube-nav");
+    const vv = window.visualViewport;
+    if (!nav) return;
+    const isMobile = window.matchMedia("(max-width: 720px)").matches;
+    if (!isMobile || !vv) { nav.style.top = ""; nav.style.bottom = ""; return; }
+    const gap = 12;                              // breathing room above the chrome
+    const navH = nav.offsetHeight || 56;
+    const visibleBottom = vv.offsetTop + vv.height; // y of the visible-area bottom
+    nav.style.bottom = "auto";
+    nav.style.top = Math.max(8, visibleBottom - navH - gap) + "px";
+  }
+  function watchViewport() {
+    const relayout = () => requestAnimationFrame(followViewport);
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener("resize", relayout);
+      window.visualViewport.addEventListener("scroll", relayout);
+    }
+    window.addEventListener("resize", relayout);
+    window.addEventListener("orientationchange", relayout);
+    window.addEventListener("scroll", relayout, { passive: true });
+    followViewport();
+  }
+
   function buildFooter() {
     const root = document.getElementById("footer-root");
     if (!root) return;
@@ -265,6 +295,7 @@
     pageTransitions();
     initHeroShader();   // no-op unless #hero-shader exists (Home only)
     initKnowledgeGraph(reduceMotion); // no-op unless #knowledge-graph exists
+    watchViewport();    // keep the mobile nav pinned above iOS Safari's toolbar
   });
 })();
 
