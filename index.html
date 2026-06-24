@@ -3,225 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryan Minor - Resume</title>
+    <title>Ryan Minor — Solutions Engineer</title>
+    <meta name="description" content="Ryan Minor — Solutions Engineer, full-stack developer, and AI-powered builder who turns technical software into clear business value.">
+    <meta name="theme-color" content="#161616">
+    <meta property="og:title" content="Ryan Minor — Solutions Engineer">
+    <meta property="og:description" content="Solutions Engineer · Full-Stack Developer · AI-Powered Builder. Turning technical software into clear business value.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23644a40'/><text x='50' y='68' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>RM</text></svg>">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-links">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#education" class="nav-link">Education</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <div class="scroll-progress" id="scroll-progress"></div>
+    <div id="nav-root"></div>
 
-    <main>
+    <main id="top">
         <section class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">Ryan Minor</h1>
-                <p class="hero-subtitle">Full-Stack Developer & Computer Science Student</p>
-                <p class="hero-description">Motivated Computer Science student with hands-on experience in full-stack web development, bug tracking, and UI/UX improvements. Skilled in building both front-end and back-end systems using Go, Python, C++, JavaScript, HTML, and CSS.</p>
-                <div class="hero-actions">
-                    <a href="#contact" class="btn-primary">Get in touch</a>
-                    <a href="ryan-minor-resume.pdf" class="btn-secondary" target="_blank">Download Resume</a>
+            <div class="hero__bg" aria-hidden="true">
+                <span class="aurora aurora--1"></span>
+                <span class="aurora aurora--2"></span>
+                <span class="aurora aurora--3"></span>
+                <span class="hero__grid"></span>
+                <canvas id="hero-shader" class="hero__shader"></canvas>
+                <span class="hero__veil"></span>
+            </div>
+            <div class="hero__content reveal">
+                <div class="hero__badge"><span class="hero__badge-dot"></span> Open to Associate Solutions Engineer roles · Austin, TX &amp; remote</div>
+                <h1 class="hero__title">Ryan Minor</h1>
+
+                <div class="gooey" data-gooey='["Solutions Engineer","Sales Engineer","Technical Consultant","AI-Powered Builder"]'>
+                    <svg class="gooey-defs" aria-hidden="true" focusable="false" width="0" height="0"><defs><filter id="threshold"><feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 255 -140"/></filter></defs></svg>
+                    <div class="gooey__stage"><span class="gooey__t1"></span><span class="gooey__t2"></span></div>
                 </div>
+
+                <p class="hero__lead">
+                    I turn technical software into clear business value for non-technical buyers — running
+                    <strong>product demos</strong> and <strong>discovery calls</strong>, designing solutions, and helping
+                    companies modernize outdated, paper-based processes. I build full-stack, and I build fast with
+                    <strong>AI-assisted development</strong>.
+                </p>
+                <div class="hero__cta">
+                    <a href="projects.html" class="btn btn-primary">Explore my work</a>
+                    <a href="RyanMinor_SolutionsEngineer_Resume.pdf" target="_blank" class="btn btn-outline">View résumé</a>
+                    <a href="contact.html" class="btn btn-ghost">Contact me</a>
+                </div>
+                <div class="hero__socials">
+                    <a href="https://linkedin.com/in/ryan-minor" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+                    <a href="https://github.com/rminor2" target="_blank" rel="noreferrer">GitHub ↗</a>
+                    <a href="mailto:rminor2@uccs.edu">rminor2@uccs.edu</a>
+                </div>
+            </div>
+
+            <div class="hero__stats reveal">
+                <div class="stat"><span class="stat__num" data-count="13" data-suffix="">0</span><span class="stat__label">Product demos delivered</span></div>
+                <div class="stat"><span class="stat__num" data-count="79" data-suffix="%">0</span><span class="stat__label">Sales close rate (founder)</span></div>
+                <div class="stat"><span class="stat__num" data-count="2" data-suffix="×">0</span><span class="stat__label">Solutions Eng. internships</span></div>
+                <div class="stat"><span class="stat__num" data-count="6" data-suffix="">0</span><span class="stat__label">Business tools unified</span></div>
             </div>
         </section>
 
-        <section id="about" class="section">
+        <section class="section">
             <div class="container">
-                <h2 class="section-title">About</h2>
-                <div class="about-content">
-                    <p class="about-text">
-                        I'm a passionate Computer Science student at UCCS with real-world experience in full-stack development and a proven track record of delivering functional, user-friendly applications. I thrive in collaborative environments and am always eager to tackle new challenges, whether it's debugging complex systems, building responsive web applications, or leading team projects from concept to completion.
-                    </p>
+                <div class="section-head reveal">
+                    <span class="eyebrow">Where to start</span>
+                    <h2 class="section-title">Explore the work in depth</h2>
+                    <p class="section-sub">Each area has its own page — dig into the part that matters most to you.</p>
                 </div>
-            </div>
-        </section>
-
-        <section id="experience" class="section section-gray">
-            <div class="container">
-                <h2 class="section-title">Experience</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3 class="job-title">Junior Developer Intern</h3>
-                            <h4 class="company">SnapSOP</h4>
-                            <p class="job-period">May 2025 - Present</p>
-                            <ul class="job-responsibilities">
-                                <li>Organized and restructured bug tracking system for web and mobile app features, categorizing issues by type, priority, and developer ownership</li>
-                                <li>Proactively identified, logged, and documented 40+ bugs, ensuring transparency and accountability across the dev team</li>
-                                <li>Resolved UI/UX and front-end issues directly using HTML and CSS</li>
-                                <li>Collaborated in weekly meetings with developers and leadership to review progress, align priorities, and plan fixes</li>
-                                <li>Maintained frequent communication with supervisor via Slack, providing progress updates three times per week</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3 class="job-title">Full Stack Developer Intern</h3>
-                            <h4 class="company">Why Not Go Pro</h4>
-                            <p class="job-period">May 2024 - Aug 2024</p>
-                            <ul class="job-responsibilities">
-                                <li>Developed a full-stack web app using Go, PostgreSQL, HTML, and CSS to simulate and track basketball player scores</li>
-                                <li>Implemented real-time score simulation and automatic leaderboard generation with persistent storage</li>
-                                <li>Built dynamic HTTP endpoints integrated with a responsive front-end UI</li>
-                                <li>Applied concurrency and server-client integration concepts for reliable performance</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3 class="job-title">Founder & Manager</h3>
-                            <h4 class="company">M&M PowerWashing</h4>
-                            <p class="job-period">May 2020 - Aug 2022</p>
-                            <ul class="job-responsibilities">
-                                <li>Managed a 3-person team, scheduling projects and coordinating work across three neighborhoods</li>
-                                <li>Generated 80+ leads and converted 63 into paying contracts via outreach campaigns</li>
-                                <li>Secured $10,000+ in contracts within three months</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="section">
-            <div class="container">
-                <h2 class="section-title">Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3 class="skill-category-title">Languages & Frameworks</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">Go</span>
-                            <span class="skill-tag">C++</span>
-                            <span class="skill-tag">C</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">HTML</span>
-                            <span class="skill-tag">CSS</span>
-                            <span class="skill-tag">PostgreSQL</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3 class="skill-category-title">Tools & Technologies</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">GitHub</span>
-                            <span class="skill-tag">VS Code</span>
-                            <span class="skill-tag">BeautifulSoup</span>
-                            <span class="skill-tag">pandas</span>
-                            <span class="skill-tag">Excel</span>
-                            <span class="skill-tag">Slack</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3 class="skill-category-title">Core Competencies</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Agile Collaboration</span>
-                            <span class="skill-tag">Bug Triaging</span>
-                            <span class="skill-tag">UI/UX Improvements</span>
-                            <span class="skill-tag">Problem Solving</span>
-                            <span class="skill-tag">Communication</span>
-                            <span class="skill-tag">Full-Stack Development</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="section">
-            <div class="container">
-                <h2 class="section-title">Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <h3 class="project-title">Ride-Sharing Fare Calculator</h3>
-                        <p class="project-tech">Built with C</p>
-                        <p class="project-description">
-                            Designed a fare estimation system with distance/time pricing, input validation, random traffic simulation, and survey feedback. Integrated linked lists for dynamic ride data management and file I/O for storage and reporting.
-                        </p>
-                    </div>
-                    
-                    <div class="project-card">
-                        <h3 class="project-title">CVPR Author Analytics Tool</h3>
-                        <p class="project-tech">Built with Python</p>
-                        <p class="project-description">
-                            Scraped multi-year CVPR conference data using BeautifulSoup and pandas. Identified top contributors and authorship trends, exporting findings into Excel reports.
-                        </p>
-                    </div>
-                    
-                    <div class="project-card">
-                        <h3 class="project-title">Customer Account Management System</h3>
-                        <p class="project-tech">Built with C++</p>
-                        <p class="project-description">
-                            Built a menu-driven app with secure password validation to manage customer accounts. Implemented structured data and dynamic containers for flexible record handling.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="education" class="section section-gray">
-            <div class="container">
-                <h2 class="section-title">Education</h2>
-                <div class="education-content">
-                    <div class="education-item">
-                        <h3 class="degree">B.A. Computer Science</h3>
-                        <h4 class="school">University of Colorado Colorado Springs (UCCS)</h4>
-                        <p class="education-period">Expected Graduation: June 2027</p>
-                        <p class="education-details">Relevant Coursework: Data Structures & Algorithms, Object-Oriented Programming, C/C++, Technical Writing</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-            <div class="container">
-                <h2 class="section-title">Let's connect</h2>
-                <div class="contact-content">
-                    <p class="contact-text">Ready to discuss opportunities or collaborate on projects?</p>
-                    <div class="contact-methods">
-                        <a href="mailto:rminor2@uccs.edu" class="contact-link">
-                            <span class="contact-icon">✉</span>
-                            rminor2@uccs.edu
-                        </a>
-                        <a href="tel:512-954-8929" class="contact-link">
-                            <span class="contact-icon">📞</span>
-                            512-954-8929
-                        </a>
-                        <a href="https://www.linkedin.com/in/ryan-minor-825126228/" class="contact-link" target="_blank">
-                            <span class="contact-icon">💼</span>
-                            LinkedIn
-                        </a>
-                        <a href="https://github.com/rminor2" class="contact-link" target="_blank">
-                            <span class="contact-icon">💻</span>
-                            GitHub
-                        </a>
-                        <div class="contact-link">
-                            <span class="contact-icon">📍</span>
-                            Colorado Springs, CO
-                        </div>
-                    </div>
+                <div class="overview-grid">
+                    <a class="ov-card reveal" href="experience.html">
+                        <div class="ov-card__icon">🤝</div>
+                        <h3>Solutions Engineering</h3>
+                        <p>Two internships running demos, discovery, and onboarding — translating software into business value for executives.</p>
+                        <span class="ov-card__more">See experience →</span>
+                    </a>
+                    <a class="ov-card reveal" href="ai.html">
+                        <div class="ov-card__icon">🧠</div>
+                        <h3>AI-Augmented Building</h3>
+                        <p>How I plan, build, and ship production software with AI as a technical coworker — plus my Obsidian knowledge system.</p>
+                        <span class="ov-card__more">See my process →</span>
+                    </a>
+                    <a class="ov-card reveal" href="projects.html">
+                        <div class="ov-card__icon">🚀</div>
+                        <h3>Projects</h3>
+                        <p>Real systems I've architected and shipped — from an executive operations dashboard to a B2B SaaS platform.</p>
+                        <span class="ov-card__more">See projects →</span>
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Ryan Minor. All rights reserved.</p>
-        </div>
-    </footer>
-
+    <footer class="footer" id="footer-root"></footer>
     <script src="script.js"></script>
 </body>
 </html>

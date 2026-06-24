@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Ryan Minor</title>
+    <meta name="description" content="Completed projects by Ryan Minor — a deployed full-stack Django SaaS (RockCity), a Unity team game (CinderCity), a Python cache-design simulator, and more. Code on GitHub.">
+    <meta name="theme-color" content="#161616">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23644a40'/><text x='50' y='68' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>RM</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="scroll-progress" id="scroll-progress"></div>
+    <div id="nav-root"></div>
+
+    <main>
+        <header class="page-hero">
+            <div class="container reveal">
+                <span class="eyebrow">Projects</span>
+                <h1 class="page-hero__title">Things I've designed, built, and shipped</h1>
+                <p class="page-hero__lead">A selection of completed projects — from a deployed full-stack SaaS to a Unity team game and a computer-architecture simulator. Every one is on GitHub; follow the links to dig into the code.</p>
+            </div>
+        </header>
+
+        <section class="section">
+            <div class="container">
+                <div class="proj-grid">
+
+                    <article class="proj-card reveal">
+                        <div class="proj-card__head"><h3>RockCity</h3><span class="proj-card__status proj-card__status--live">Deployed</span></div>
+                        <p class="proj-role">Full-stack SaaS · UCCS CS4300/5300 Software Engineering · 6-developer Agile team</p>
+                        <p class="proj-card__desc">A gamified web application where users "adopt" and care for virtual rocks — each with needs like temperature, water, and cleanliness. Caring for them well unlocks new rock types and, eventually, a rare moon rock, while surfacing geology fun facts so users learn as they play. Built as a <strong>Django</strong> application with a SQLite backend, server-rendered templates, and JavaScript interactivity, then deployed to <strong>Render</strong>. I worked on it as one of six developers using Agile practices, with a <strong>pytest + Behave (BDD)</strong> test suite and coverage reporting.</p>
+                        <div class="proj-foot">
+                            <div class="proj-card__tags"><span>Python</span><span>Django</span><span>SQLite</span><span>JavaScript</span><span>BDD / pytest</span><span>Render</span></div>
+                            <div class="proj-links">
+                                <a class="proj-link" href="https://github.com/UCCS-CS4300-5300/group1-spring2026" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-1.7c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.6 18 4.9 18 4.9c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg> View on GitHub</a>
+                                <a class="proj-link proj-link--ghost" href="https://group1-spring2026.onrender.com/login/" target="_blank" rel="noreferrer">Live demo ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="proj-card reveal">
+                        <div class="proj-card__head"><h3>CinderCity</h3><span class="proj-card__status">Team game</span></div>
+                        <p class="proj-role">Unity game · UCCS GDD 2150 Game Design · team project</p>
+                        <p class="proj-card__desc">A <strong>Unity</strong> game built in <strong>C#</strong>, set in an urban environment with fire-rescue gameplay — players race to rescue civilians as fire spreads through the city. The project spans multiple implementations (Unity and GameMaker) and uses custom shaders for visual effects. The team followed formal C# programming standards and naming conventions, a Git feature-branch workflow with lead code review, and project management through HacknPlan and Clockify.</p>
+                        <div class="proj-foot">
+                            <div class="proj-card__tags"><span>Unity</span><span>C#</span><span>ShaderLab / HLSL</span><span>Git workflow</span></div>
+                            <div class="proj-links">
+                                <a class="proj-link" href="https://github.com/BlueHades74/CinderCity" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-1.7c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.6 18 4.9 18 4.9c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg> View on GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="proj-card reveal">
+                        <div class="proj-card__head"><h3>Cache Design Exploration</h3><span class="proj-card__status">Coursework</span></div>
+                        <p class="proj-role">Computer architecture · UCCS CS4200 · semester project</p>
+                        <p class="proj-card__desc">A configurable <strong>Python cache simulator</strong> and experiment driver that quantifies how cache organization — associativity, capacity, block size, and replacement policy — affects performance across synthetic and realistic workloads, including matrix multiply. It models a parameterized cache (LRU/FIFO, write-back / write-allocate), splits addresses into tag/index/offset, and classifies every miss with the <strong>3C model</strong> (compulsory / capacity / conflict) using a fully-associative shadow cache. The driver sweeps configurations, prints summary tables, and generates CSV + matplotlib charts — surfacing findings like a clear capacity "knee" and an associativity sweet spot. Backed by hand-checked unit tests.</p>
+                        <div class="proj-foot">
+                            <div class="proj-card__tags"><span>Python</span><span>matplotlib</span><span>Computer Architecture</span><span>Data Analysis</span></div>
+                            <div class="proj-links">
+                                <a class="proj-link" href="https://github.com/rminor2/Cache-Design-Project-CS4200-Minor" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-1.7c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.6 18 4.9 18 4.9c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg> View on GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="proj-card reveal">
+                        <div class="proj-card__head"><h3>CVPR Author Analytics</h3><span class="proj-card__status">Data tool</span></div>
+                        <p class="proj-role">Python data scraper · CVF Open Access proceedings</p>
+                        <p class="proj-card__desc">A Python tool that scrapes multiple years of CVF Open Access conference proceedings (CVPR) with <strong>BeautifulSoup</strong>, aggregates an author-by-year matrix with <strong>pandas</strong>, and surfaces the most prolific authors — exporting clean CSV / Excel reports and optional charts. Refactored from a course project into a tested, reusable package with a command-line interface.</p>
+                        <div class="proj-foot">
+                            <div class="proj-card__tags"><span>Python</span><span>BeautifulSoup</span><span>pandas</span><span>CLI</span><span>pytest</span></div>
+                            <div class="proj-links">
+                                <a class="proj-link" href="https://github.com/rminor2/cvpr-author-analytics-project" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-1.7c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.6 18 4.9 18 4.9c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg> View on GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="proj-card reveal">
+                        <div class="proj-card__head"><h3>Resume Website Builder</h3><span class="proj-card__status">Personal</span></div>
+                        <p class="proj-role">Full-stack web app · personal project</p>
+                        <p class="proj-card__desc">A browser app that turns a résumé PDF into a ready-to-use résumé website. Users sign in, upload a PDF, and the app extracts the text entirely client-side (<strong>pdf.js</strong>), parses it into structured sections — skills, experience, education, projects — and generates a styled HTML résumé site with one-click download, a live preview, and a shareable QR code, all without a backend.</p>
+                        <div class="proj-foot">
+                            <div class="proj-card__tags"><span>HTML / CSS / JS</span><span>pdf.js</span><span>Client-side</span></div>
+                            <div class="proj-links">
+                                <a class="proj-link" href="https://github.com/rminor2/ResumeWebsiteBuilder" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-1.7c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.6 18 4.9 18 4.9c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg> View on GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="proj-card reveal">
+                        <div class="proj-card__head"><h3>This Portfolio Site</h3><span class="proj-card__status proj-card__status--live">Live</span></div>
+                        <p class="proj-role">Front-end engineering · personal project</p>
+                        <p class="proj-card__desc">The multi-page site you're on — designed and built from scratch in vanilla HTML, CSS, and JavaScript with no framework or build step. It includes a <strong>WebGL hero shader</strong>, an animated Obsidian-style <strong>knowledge graph</strong>, gooey morphing text, a tubelight navigation, and smooth page transitions — all dependency-free and fully responsive.</p>
+                        <div class="proj-foot">
+                            <div class="proj-card__tags"><span>HTML / CSS / JS</span><span>WebGL / Canvas</span><span>Responsive</span></div>
+                            <div class="proj-links">
+                                <a class="proj-link" href="https://github.com/rminor2/ResumeWebsite" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-1.7c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.6 18 4.9 18 4.9c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg> View on GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <p class="stack-note reveal">More technical work — including the Why&nbsp;Not&nbsp;Go&nbsp;Pro score-tracking platform — is detailed on my <a href="resume.html" style="color:var(--brand);font-weight:600;">résumé</a>.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="footer-root"></footer>
+    <script src="script.js"></script>
+</body>
+</html>
