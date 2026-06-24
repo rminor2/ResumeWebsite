@@ -242,6 +242,7 @@ h1, h2, h3 { line-height: 1.1; letter-spacing: -0.02em; }
 .contact-methods { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
 .contact-chip { display: inline-flex; align-items: center; gap: 9px; padding: 12px 20px; border-radius: 999px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.15); color: #fff; font-weight: 500; font-size: .95rem; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
 .contact-chip:hover { transform: translateY(-3px); background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.4); }
+.contact-chip__tag { font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.6); background: rgba(255,255,255,.1); padding: 2px 7px; border-radius: 999px; }
 .contact-loc { margin-top: 26px; color: #a89c8c; font-size: .92rem; }
 
 /* ---------- Footer ---------- */
