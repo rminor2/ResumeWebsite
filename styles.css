@@ -317,19 +317,14 @@ body.is-exiting main { animation: pageOut .24s ease both; }
   .graph-wrap { height: 440px; }
   .graph-legend { max-width: 92%; }
 
-  /* tubelight nav → vertical side rail on the right.
-     A bottom bar collides with iOS Safari's toolbar, making the tabs untappable;
-     a centered side rail stays clear of it. */
-  .tube-nav { top: 50%; bottom: auto; left: auto; right: 8px; transform: translateY(-50%); max-width: none; }
-  .tube-nav__pill { flex-direction: column; align-items: stretch; gap: 4px; overflow-x: visible; overflow-y: auto; max-width: none; max-height: calc(100dvh - 28px); -ms-overflow-style: none; scrollbar-width: none; }
+  /* tubelight nav → floating bottom bar, raised up so it sits ABOVE iOS Safari's
+     bottom toolbar (which otherwise covers the tabs and makes them untappable). */
+  .tube-nav { top: auto; bottom: calc(env(safe-area-inset-bottom, 0px) + 62px); }
+  .tube-nav__pill { overflow-x: auto; max-width: calc(100vw - 24px); -ms-overflow-style: none; scrollbar-width: none; }
   .tube-nav__pill::-webkit-scrollbar { display: none; }
-  .tube-link { justify-content: center; padding: 12px; }
+  .tube-link { padding: 10px 12px; }
   .tube-link__label { display: none; }
   .tube-link__icon { display: inline-flex; }
-  .tube-link__icon svg { width: 20px; height: 20px; }
-  /* the sliding lamp is horizontal-only; on the vertical rail use a filled active pill instead */
-  .tube-lamp { display: none; }
-  .tube-link.active { background: var(--grad); color: #fff; }
   .page-hero { padding: 92px 0 44px; }
 }
 
